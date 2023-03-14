@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/activity_main">
+
+    <fragment
+        android:id="@+id/content_main"
+        android:label="@string/activity_main_label"
+        tools:layout="@layout/content_main">
+
+        <action
+            android:id="@+id/action_MainActivity_to_SensorActivity"
+            app:destination="@id/activity_sensor" />
+
+        <action
+            android:id="@+id/action_MainActivity_to_Location"
+            app:destination="@id/location" />
+
+        <action
+            android:id="@+id/action_MainActivity_to_CaptureActivity"
+            app:destination="@id/activity_capture" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activity_sensor"
+        android:name="com.example.ActyG3_Sensor.SensorActivity"
+        android:label="@string/activity_sensor_label"
+        tools:layout="@layout/activity_sensor">
+
+        <action
+            android:id="@+id/action_back_SensorActivity"
+            app:destination="@id/content_main" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activity_location"
+        android:name="com.example.ActyG3_Sensor.Location"
+        android:label="@string/activity_location_label"
+        tools:layout="@layout/activity_location">
+
+        <action
+            android:id="@+id/action_back_SensorActivity"
+            app:destination="@id/content_main" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activity_capture"
+        android:name="com.example.ActyG3_Sensor.CaptureActivity"
+        android:label="@string/activity_capture_label"
+        tools:layout="@layout/activity_capture">
+
+        <action
+            android:id="@+id/action_back_SensorActivity"
+            app:destination="@id/content_main" />
+    </fragment>
+</navigation>
